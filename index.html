@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интерактивная карта Воронежской области</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Воронежская область · Россия</p>
+          <h1>Карта знаменитых умов Воронежа</h1>
+          <p class="subtitle">
+            Нажмите на точку на карте, чтобы узнать о людях, родившихся на
+            воронежской земле. Панель справа выезжает с краткой биографией и
+            фактами.
+          </p>
+        </div>
+        <div class="legend">
+          <div class="legend-item">
+            <span class="legend-dot"></span>
+            <span>Точки рождения</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-line"></span>
+            <span>Границы области (схематично)</span>
+          </div>
+        </div>
+      </header>
 
+      <main class="content">
+        <section class="map-panel">
+          <div id="map" aria-label="Интерактивная карта Воронежской области"></div>
+          <div class="map-overlay">
+            <h2>Интерактивная карта</h2>
+            <p>Перетаскивайте карту и масштабируйте колесиком мыши.</p>
+          </div>
+        </section>
+
+        <aside class="info-panel" id="infoPanel" aria-live="polite">
+          <button class="close-button" id="closePanel" aria-label="Закрыть панель">
+            ×
+          </button>
+          <div class="info-content" id="infoContent">
+            <h2>Выберите точку</h2>
+            <p>
+              Здесь появится информация о знаменитом человеке, родившемся в
+              Воронежской области.
+            </p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
