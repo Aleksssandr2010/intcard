@@ -171,6 +171,21 @@ h1 {
   line-height: 1.6;
 }
 
+.info-header {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.info-header img {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(19, 32, 68, 0.18);
+}
+
 .info-card {
   display: grid;
   gap: 12px;
@@ -195,21 +210,6 @@ h1 {
   color: var(--muted);
   display: grid;
   gap: 6px;
-}
-
-.marker {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  background: #3a6ff8;
-  box-shadow: 0 0 0 6px rgba(58, 111, 248, 0.2);
-  cursor: pointer;
-}
-
-.marker:focus-visible {
-  outline: 2px solid #1b3f9e;
-  outline-offset: 3px;
 }
 
 .info-meta {
