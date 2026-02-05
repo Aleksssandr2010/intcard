@@ -76,15 +76,44 @@ const people = [
   },
 ];
 
+const rasterStyle = {
+  version: 8,
+  sources: {
+    osm: {
+      type: "raster",
+      tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+      tileSize: 256,
+      attribution:
+        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    },
+  },
+  layers: [
+    {
+      id: "osm-base",
+      type: "raster",
+      source: "osm",
+    },
+  ],
+};
+
 const map = new maplibregl.Map({
   container: "map",
-  style: "https://demotiles.maplibre.org/style.json",
-  center: [39.4, 51.75],
-  zoom: 7.5,
+  style: rasterStyle,
+  center: [99, 60],
+  zoom: 3.6,
+  minZoom: 3,
+  maxZoom: 10,
+  maxBounds: [
+    [19, 41],
+    [170, 82],
+  ],
   attributionControl: true,
 });
 
-map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+map.addControl(
+  new maplibregl.NavigationControl({ showCompass: false }),
+  "bottom-right"
+);
 
 const oblastOutline = [
   [38.3, 52.1],
@@ -141,8 +170,8 @@ map.on("load", () => {
     type: "fill",
     source: "mask",
     paint: {
-      "fill-color": "#80889a",
-      "fill-opacity": 0.55,
+      "fill-color": "#6e7686",
+      "fill-opacity": 0.6,
     },
   });
 
